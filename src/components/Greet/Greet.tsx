@@ -1,9 +1,5 @@
-type GreetProps = {
-	name?: string;
-};
-
-const Greet = ({ name }: GreetProps) => {
-	return <div>Hello {name}</div>;
+const Greet = () => {
+	return <div>Hello World</div>;
 };
 
 export default Greet;
