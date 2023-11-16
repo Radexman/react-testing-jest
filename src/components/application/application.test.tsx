@@ -1,16 +1,18 @@
 import { render, screen } from '@testing-library/react';
-import Application from './application';
+import Application from './Application';
 
 describe('Application', () => {
-	test('renders correctly', () => {
+	test('should render correctly', () => {
 		render(<Application />);
 
 		const pageHeading = screen.getByRole('heading', {
+			name: 'Job Application Form',
 			level: 1,
 		});
 		expect(pageHeading).toBeInTheDocument();
 
 		const sectionHeading = screen.getByRole('heading', {
+			name: 'Section One',
 			level: 2,
 		});
 		expect(sectionHeading).toBeInTheDocument();
@@ -19,11 +21,6 @@ describe('Application', () => {
 			name: 'Name',
 		});
 		expect(nameElement).toBeInTheDocument();
-
-		const nameElemntTwo = screen.getByLabelText('Name', {
-			selector: 'input',
-		});
-		expect(nameElemntTwo).toBeInTheDocument();
 
 		const bioElement = screen.getByRole('textbox', {
 			name: 'Bio',
@@ -35,9 +32,6 @@ describe('Application', () => {
 
 		const termsElement = screen.getByRole('checkbox');
 		expect(termsElement).toBeInTheDocument();
-
-		const termsElementTwo = screen.getByLabelText('I agree to the terms and conditions');
-		expect(termsElementTwo).toBeInTheDocument();
 
 		const submitElement = screen.getByRole('button');
 		expect(submitElement).toBeInTheDocument();
