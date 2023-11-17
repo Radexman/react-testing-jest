@@ -1,12 +1,10 @@
 import './App.css';
-import Application from './components/application/Application';
+import Skills from './components/skills/Skills';
 
 function App() {
-	return (
-		<div className='App'>
-			<Application />
-		</div>
-	);
+	// const skills = ['coding', 'playing guitar', 'cooking'];
+
+	return <div className='App'>{/* <Skills skills={skills} /> */}</div>;
 }
 
 export default App;
